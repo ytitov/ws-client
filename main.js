@@ -1,7 +1,7 @@
 import { Chat, makeId, getCookie } from "./websocket/chat.js";
 import { Message } from "./websocket/message.js";
 
-var Client = {};
+export var Client = {};
 
 Client.ws = new Chat('wss://'+window.location.host+'/ws', Date.now());
 Client.init = function() {
