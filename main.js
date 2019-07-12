@@ -1,5 +1,5 @@
-import { Chat, makeId, getCookie } from "websocket/chat.js";
-import { Message } from "websocket/message.js";
+import { Chat, makeId, getCookie } from "./websocket/chat.js";
+import { Message } from "./websocket/message.js";
 
 var Client = {};
 
