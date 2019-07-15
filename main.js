@@ -1,9 +1,18 @@
 import { Chat, makeId, getCookie } from "./websocket/chat.js";
 import { Message } from "./websocket/message.js";
 
-export var Client = {};
+var config = {
+  wssAddress: 'wss://'+window.location.host+'/ws',
+}
 
-Client.ws = new Chat('wss://'+window.location.host+'/ws', Date.now());
+export var Client = {
+  setAddress: addr => {
+    config.wssAddress = addr;
+    Client.ws = new Chat(config.wssAddress, Date.now());
+  }
+};
+
+Client.ws = new Chat(config.wssAddress, Date.now());
 Client.init = function() {
   console.log('ws_token', getCookie('ws_token'));
 }
